@@ -1,6 +1,6 @@
-# Accident Timestamp Extraction
+# Accidetect
 
-Accident Timestamp Extraction is a Flask web application designed to automate the process of accident detection in surveillance footage and extract precise timestamps corresponding to the moment of occurrence. This project aims to facilitate insurance claims processing by eliminating the need for manual review of entire video footage, providing a more efficient and accurate solution.
+Accidetect is a Flask web application designed to automate the process of accident detection in surveillance footage and extract precise timestamps corresponding to the moment of occurrence. This project aims to facilitate insurance claims processing by eliminating the need for manual review of entire video footage, providing a more efficient and accurate solution.
 
 ## Features
 
@@ -17,15 +17,18 @@ Accident Timestamp Extraction is a Flask web application designed to automate th
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your_username/accident-timestamp-extraction.git
+   git clone https://github.com/adityadesity11/Accidetect.git
+   ```
 
+**Download requirements**
+```bash
 pip install -r requirements.txt
-
+```
 2. **Download the model file:** https://drive.google.com/file/d/1QYnGJ3A_0Ee8hloNHLTd8dWEqeyJdxWz/view?usp=drive_link 
 
 3. Save model.h5 to **artifacts/**
 
-4. **Run the command**:
+4. Run the command:
 ```bash
 python app.py
 ```

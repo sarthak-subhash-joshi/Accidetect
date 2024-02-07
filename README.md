@@ -21,11 +21,14 @@ Accident Timestamp Extraction is a Flask web application designed to automate th
 
 pip install -r requirements.txt
 
-2. *Download the model file https://drive.google.com/file/d/1QYnGJ3A_0Ee8hloNHLTd8dWEqeyJdxWz/view?usp=drive_link *
+2. **Download the model file:** https://drive.google.com/file/d/1QYnGJ3A_0Ee8hloNHLTd8dWEqeyJdxWz/view?usp=drive_link 
 
-3. *Save model.h5 to artifacts/*
+3. Save model.h5 to **artifacts/**
 
+4. **Run the command**:
+```bash
 python app.py
+```
 Access the web application at http://localhost:5000 and follow the instructions to upload surveillance footage and extract accident timestamps.
 
 

@@ -40,4 +40,4 @@ Access the web application at http://localhost:5000 and follow the instructions 
 Feel free to customize the content as needed and replace placeholders (e.g., `your_username`, `accident-timestamp-extraction`) with appropriate values.
 
 
-![Sample result](static\images\results\frame12.jpg)
+![Sample result](static/images/results/frame12.jpg)

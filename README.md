@@ -14,21 +14,21 @@ Accidetect is a Flask web application designed to automate the process of accide
 
 ## Usage
 
-1. Clone the repository:
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/adityadesity11/Accidetect.git
    ```
 
-**Download requirements**
+2. **Download requirements**
 ```bash
 pip install -r requirements.txt
 ```
-2. **Download the model file:** https://drive.google.com/file/d/1QYnGJ3A_0Ee8hloNHLTd8dWEqeyJdxWz/view?usp=drive_link 
+3. **Download the model file:** https://drive.google.com/file/d/1QYnGJ3A_0Ee8hloNHLTd8dWEqeyJdxWz/view?usp=drive_link 
 
-3. Save model.h5 to **artifacts/**
+4. Save model.h5 to **artifacts/**
 
-4. Run the command:
+5. Run the command:
 ```bash
 python app.py
 ```

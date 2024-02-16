@@ -6,6 +6,7 @@ from src.logger import logging
 from src.exception import CustomException
 from tensorflow.keras.models import load_model
 import cv2
+from src.pipeline.timestamp_pipeline import AccidentTimestamp
 
 class PredictionPipeline:
     def __init__(self):
@@ -44,16 +45,13 @@ class PredictionPipeline:
                 current_frame += 1
             cap.release()
             logging.info("Prediction Done and outputs saved")
-            return output_vector
+            timestamp_obj = AccidentTimestamp()
+            return timestamp_obj.get_timestamp(video_path=video_path,output_array=output_vector)
         except Exception as e:
             raise CustomException(e,sys)
         
 
-
-
-
 # if __name__ == "__main__":
 #     prediction_obj = PredictionPipeline()
-#     print(prediction_obj.predict('artifacts\Demo.mp4'))
-# 
-    
+#     print(prediction_obj.predict('static/uploads/Demo.mp4'))
+# success    

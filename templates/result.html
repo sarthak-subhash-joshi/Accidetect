@@ -244,20 +244,20 @@
   <!-- Navbar end -->
   <div class="row result-images-container" style="margin: 4%;">
 
-    {% for image_name in result_list %}
+    {% for index, image_name in enumerate(result_list) %}
 
-    <img id="myImage" onclick="openPopup()" class="result-image"
-      src="{{ url_for('static', filename='images/results/' + image_name) }}" alt="">
+    <img id="myImage{{index}}" onclick="openPopup()" class="result-image"
+      src="{{ url_for('static', filename='results/' + image_name) }}" alt="">
 
     <!-- Popup Container -->
     <div id="popup-container" onclick="closePopup()">
       <div id="popup-content">
         <span id="close-btn">&times;</span>
-        <img src="{{ url_for('static', filename='images/results/' + image_name) }}" alt="Image">
+        <img src="{{ url_for('static', filename='results/' + image_name) }}" alt="">
       </div>
     </div>
-
     {% endfor %}
+
 
 
   </div>

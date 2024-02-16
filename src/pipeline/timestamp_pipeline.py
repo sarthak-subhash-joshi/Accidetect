@@ -17,6 +17,7 @@ class AccidentTimestamp:
             fps = cap.get(cv2.CAP_PROP_FPS)
             total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
             logging.info("Loaded the video")
+            file_list = []
             current_frame:int = 0
             i:int=0
             while True:
@@ -52,13 +53,16 @@ class AccidentTimestamp:
                             (0, 255, 255),
                             3,
                             cv2.LINE_4)
+                    
                     if output == 0:
-                        cv2.imwrite(f"static/images/results/frame{i}.jpg", frame)
+                        cv2.imwrite(f"static/results/frame{i}.jpg", frame)
+                        file_list.append(f"frame{i}.jpg")
 
                     i = i+1
         
                 current_frame += 1
             cap.release()
+            return file_list
         except Exception as e:
             raise CustomException(e,sys)
         
@@ -67,4 +71,5 @@ class AccidentTimestamp:
 if __name__ == "__main__":
     output_array = [1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1]
     testing_obj = AccidentTimestamp()
-    testing_obj.get_timestamp(video_path='artifacts\Demo.mp4',output_array=output_array)
+    print(testing_obj.get_timestamp(video_path='artifacts\Demo.mp4',output_array=output_array))
+# Testing successful

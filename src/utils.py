@@ -21,4 +21,3 @@ def allowed_file(filename):
 
 # if __name__ == "__main__":
 #     clear_directory('static/results')   #success
-

@@ -244,8 +244,7 @@
   <!-- Navbar end -->
   <div class="row result-images-container" style="margin: 4%;">
 
-    {% for index, image_name in enumerate(result_list) %}
-
+    {% for image_name,timestamp in result.items() %}
     <img id="myImage{{index}}" onclick="openPopup()" class="result-image"
       src="{{ url_for('static', filename='results/' + image_name) }}" alt="">
 
@@ -257,9 +256,6 @@
       </div>
     </div>
     {% endfor %}
-
-
-
   </div>
 
 

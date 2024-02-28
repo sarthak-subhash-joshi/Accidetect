@@ -38,14 +38,14 @@ class PredictionPipeline:
                         if score > threshold:
                             if class_id == 0 or class_id == 4 or class_id == 9:
                                 cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (255, 255, 0), 4)
-                                cv2.putText(frame, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)),cv2.FONT_HERSHEY_SIMPLEX, 1.3, (255, 255, 0), 3, cv2.LINE_AA)
+                                cv2.putText(frame, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)),cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 0), 2, cv2.LINE_AA)
                                 
                             else:
                                 logging.info("Accident detected")
                                 cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 0, 255), 4)
 
                                 cv2.putText(frame, display_text, (int(x1), int(y1 - 10)),
-                                        cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 255), 3, cv2.LINE_AA)
+                                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2, cv2.LINE_AA)
                                 
                                 timestamp = cap.get(cv2.CAP_PROP_POS_MSEC)
                                 timestamp_seconds = timestamp / 1000  # Convert to seconds  
@@ -66,7 +66,7 @@ class PredictionPipeline:
             raise CustomException(e,sys)
         
 
-if __name__ == "__main__":
-    prediction_obj = PredictionPipeline()
-    print(prediction_obj.predict('static/uploads/Demo.mp4'))
+# if __name__ == "__main__":
+#     prediction_obj = PredictionPipeline()
+#     print(prediction_obj.predict('static/uploads/Demo.mp4'))
 # success    

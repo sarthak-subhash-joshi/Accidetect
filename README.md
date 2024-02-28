@@ -40,4 +40,4 @@ Access the web application at http://localhost:5000 and follow the instructions 
 
 
 
-<!-- ![Sample result](static/images/results/frame12.jpg) -->
+![Sample result](static/images/sample_output.jpg)

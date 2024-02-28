@@ -15,7 +15,9 @@ preds_obj = PredictionPipeline()
 # Routes
 @app.route('/')
 def home():
+    utils.clear_directory('static/results')
     return render_template('index.html')
+# Testing route
 @app.route('/test')
 def test():
     preds_obj.predict('static/uploads/Demo.mp4')
@@ -33,3 +35,4 @@ def result():
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
+    utils.clear_directory('static/results')

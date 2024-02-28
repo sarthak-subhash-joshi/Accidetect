@@ -1,289 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accident Detection</title>
-    
-    
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- CSS file -->
+    <link rel="stylesheet" href="/styles.css" />
 
-     <!-- FontAwesome link -->
-     <script src="https://kit.fontawesome.com/7f5971d884.js" crossorigin="anonymous"></script>
-    <style>
-      body {
-    margin: 0;
-    padding: 0;
-}
-
-.name {
-    margin: 10px;
-}
-
-.navbar-main {
-    background-color: #0094ff;
-    box-shadow: 1px 1px 15px 1px black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif sans-serif;
-}
-
-.nav-link {
-    margin-right: 50px;
-}
-
-
-.drop-area {
-    width: 70%;
-    height: 200px;
-    border: 2px dashed #ccc;
-    text-align: center;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#file-upload-form{
-   margin-top: 50px;
-   text-align: center;
-}
-
-.upload-btn{
-    background-color: #DF2E38;
-    margin: 10px;
-    margin-bottom: 50px;
-    height: 60px;
-    width: 150px;
-    border-radius: 30px;
-    font-weight: 600;
-    color: #fff;
-    font-family: sans-serif;
-    border: none;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-}
-
-
-.working-cards-main-container{
-    display: flex;
-    justify-content: space-around;
-}
-
-.card-div{
-    margin-bottom: 30px;
-    margin-top: 30px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-
-.Indusrtries-main-container{
-    margin:5%;
-   display: flex;
-   justify-content: center;
-}
-
-.Industries-inner-container{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    padding: 5px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.insurance-img{
-   width: 200px;
-    height: auto;
-    margin-right: 5px;
-}
-
-
- /************************************************ Footer ***************************************************/
-
-   
-  
- 
- .footer-bottom{
-    margin: 0;
-    color: #fff;
-  }
-  
-  .footer{
-    margin: 0;
-    background-color: #181D31;
-    color: #fff;
-    padding-bottom: 1%;
-  }
-  
-  .social-media-icons{
-    text-align:  center;
-  }
-  
-  .fa {
-    padding: 10px;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    margin: 2% 0.3%;
-    border-radius: 100%;
-  }
-  
-  .fa:hover {
-      opacity: 0.7;
-      color: #fff;
-  }
-  
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-  
-  .fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
-  
-  .fa-linkedin {
-    background: #007bb5;
-    color: white;
-  }
-  
-  .fa-youtube {
-    background: #bb0000;
-    color: white;
-  }
-  
-  .fa-instagram {
-    background: #125688;
-    color: white;
-  }
-
-  /* css for waiting */
-     #overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      align-items: center;
-      justify-content: center;
-    }
-
-    #loading {
-      border: 16px solid #f3f3f3;
-      border-top: 16px solid #3498db;
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  
-
-    </style>
-</head>
-<body>
-
-    <!-- Navbar start -->
- 
-
-    <nav class="navbar navbar-expand-lg bg-body-primary  navbar-main">
-        <div class="container-fluid">
-            <h3 class="name">ACCIDETECT</h3>
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <h6> <a class="nav-link active" aria-current="page" href="/">Home</a></h6>
-              </li>
-              <li class="nav-item">
-                <h6><a class="nav-link" href="#">About</a></h6>
-              </li>
-            </ul>
-          </div>
+    <!-- FontAwesome link -->
+    <script
+      src="https://kit.fontawesome.com/7f5971d884.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-body-primary navbar-main sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/assets/logo.png"
+            alt="Logo"
+            width="80"
+            height="60"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <a  href="/"> <h3 class="name">ACCIDETECT</h3></a>
+       
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <h6>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </h6>
+            </li>
+            <li class="nav-item">
+              <h6><a class="nav-link" href="/about.html">About</a></h6>
+            </li>
+            <li class="nav-item">
+              <h6><a class="nav-link" href="/team.html">Team</a></h6>
+            </li>
+          </ul>
         </div>
-      </nav> 
+      </div>
+    </nav>
 
-   
-    <!-- Navbar end -->
+    <!-- Navbar End -->
 
-    <div id="overlay">
-      <div id="loading"></div>
-    </div>
-    
-
-
-    <!-- Uplaod form start -->
-  
-    <form action="/result" method="post">
-      <div style="display: flex; justify-content: center; font-size: large; margin-top: 50px;">
-        <div class="drop-area" id="drop-area">
-            <br>
-            <p> click to select one.</p>
-            <br>
-            <input onchange="checkFile()" required type="file" name="video" id="fileInput">
-        </div>
-    </div>
+    <div class="container-service-main row">
      
-    <div style="text-align: center;">
-      <input id="startButton" class="upload-btn" type="submit" value="Upload" disabled>
+      <div class="container-service col-lg-6">
+        <h4 class="accidetect-message">Extracting timestamped images from video footage, especially in scenarios involving accidents. </h4>
+        <!-- Uplaod form start -->
+        <form action="/result" method="post">
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              font-size: large;
+              margin-top: 50px;
+            "
+          >
+            <div class="drop-area" id="drop-area">
+              <input
+                onchange="checkFile()"
+                required
+                type="file"
+                name="video"
+                id="fileInput"
+              />
+            </div>
+          </div>
+          <div style="text-align: center">
+            <input
+              id="startButton"
+              class="upload-btn"
+              type="submit"
+              value="Upload"
+              
+            />
+          </div>
+        </form>
+
+        <!-- Upload form end -->
+      </div>
+      <div class="container-demo-video col-lg-6">
+        <iframe class="demo-video" width="100%" height="315" src="https://www.youtube.com/embed/wrfk86tbwWY?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
-  </form>
-
- <!-- Upload form end -->
 
 
- <!-- How accidetect works start -->
+     <!-- How accidetect works start -->
+          
 
-   <div class="row working-cards-main-container">
+     <div class="row working-cards-main-container" >
+      <h3 style="text-align: center; margin-bottom: 2%; font-family: 'Courier New', Courier, monospace; font-weight: bolder; color: #EE4266;background-color: #EEEEEE;">How AcciDetect Works ?</h3>
 
-    <h3 style="text-align: center;">How AcciDetect Works ?</h3>
-
-    <div  class="card col-lg-4 card-div" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+    <div  class="card col-lg-4 card-div rotate-anticlockwise" style="width: 20rem;">
+      <img src="/assets/upload-image.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"  style="text-align: center;">Upload Video</h5>
         <p class="card-text"> Simply upload your video footage to AcciDetect's platform, where our advanced algorithms will start the analysis.</p>
       </div>
     </div>
 
-    <div class="card col-lg-4 card-div" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card col-lg-4 card-div rotate-anticlockwise" style="width: 20rem;">
+      <img src="/assets/detect-image.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"  style="text-align: center;">Detect Accidents</h5>
         <p class="card-text"> AcciDetect's AI algorithms will carefully analyze the video and promptly determine whether an accident is occurring within the footage..</p>
       </div>
     </div>
 
-    <div class="card col-lg-4 card-div" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card col-lg-4 card-div rotate-anticlockwise" style="width: 20rem;">
+      <img src="/assets/timestamp-image.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"  style="text-align: center;">Timestamp Provided</h5>
         <p class="card-text">If an accident is detected, AcciDetect will provide a precise timestamp indicating when the accident occurred in the video, allowing for swift response and action.</p>
       </div>
     </div>
 
-   </div>
+     </div>
 
- <!-- how accidetect works end -->
+     <div style="margin-top: 30px; padding: 20px; font-family: 'Courier New', Courier, monospace; font-weight: bolder; color: #EE4266;background-color: #EEEEEE;"></div>
 
-<hr>
+
+ 
  <!-- Industries we server start -->
-
  <div class="row Indusrtries-main-container">
  
   <div class="col-lg-8 Industries-inner-container">
-    <img class="insurance-img" src="https://tse1.mm.bing.net/th?id=OIP.FBBgX9kqGTN0QQSDygw6AQHaEc&pid=Api&P=0&h=180" alt="">
-    <div>
-      <h3>Industries We Serve</h3>
+    <img class="insurance-img" src="/assets/industries-we-serve.jpg" alt="">
+    <div style="text-align: center;">
+      <h4 style="color: #00337C;">Industries We Serve</h4>
     <hr>
     <p><strong>Insurance industry </strong>AcciDetect can help insurance companies identify potentially fraudulent claims. By analyzing video footage, it can determine whether reported accidents actually occurred, helping to prevent false or exaggerated claims.</p>
     </div>
@@ -291,109 +166,81 @@
  </div>
 
  <!-- Indusrtries we serve end -->
+ <h3 style="text-align: center; margin-bottom: 2%; font-family: 'Courier New', Courier, monospace; font-weight: bolder; color: #EE4266;background-color: #EEEEEE;">FAQ</h3>
 
+ <div class="accordion " id="accordionFAQ">
 
-
-  <!-- Footer starts -->
-
-  <div class="footer">
-    <div class="social-media-icons">
-      <a href="#" class="fa fa-twitter"></a>
-      <a href="#" class="fa fa-youtube"></a>
-      <a href="#" class="fa fa-instagram"></a>
-      <a href="#" class="fa fa-linkedin"></a>
-      <a href="#" class="fa fa-facebook"></a>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <span class="me-2">What should I do if I witness an accident?</span> <i class="bi bi-caret-down"></i>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+      <div class="accordion-body">
+        If you witness an accident, prioritize safety first. Call emergency services immediately and provide accurate details about the location and nature of the accident. Do not intervene unless it is safe to do so.
+       </div>
     </div>
+  </div>
 
-    <p style="text-align: center"> Copyright &copy; <script>
-        document.write(new Date().getFullYear())
-      </script> All Rights Reserved</p>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <span class="me-2">How can I report an accident using the app?</span> <i class="bi bi-caret-down"></i>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+      <div class="accordion-body">
+        To report an accident using the app, open the application and navigate to the "Report Accident" section. Follow the prompts to provide essential information such as location, type of accident, and any additional details that may assist responders.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+        <span class="me-2">Will my personal information be kept confidential when reporting an accident?
+        </span> <i class="bi bi-caret-down"></i>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+      <div class="accordion-body">
+        Yes, your personal information will be kept confidential when reporting an accident through the app. We prioritize user privacy and only share necessary details with emergency services and relevant authorities.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+        <span class="me-2">Can I upload photos or videos of the accident scene through the app?</span> <i class="bi bi-caret-down"></i>
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+      <div class="accordion-body">
+        Yes, you can upload photos or videos of the accident scene through the app when reporting an accident. Visual documentation can provide valuable insights for responders and assist in the investigation process.
+      </div>
+    </div>
+  </div>
 
   </div>
 
 
-  <!-- Footer ends -->
+     <!-- Footer starts -->
 
+     <div class="footer">
 
-  <script>
-
-function checkFile() {
-        // Get the file input element
-        var fileInput = document.getElementById('fileInput');
-
-        // Get the upload button
-        var startButton = document.getElementById('startButton');
-
-        // Enable the upload button if a file is selected, otherwise disable it
-        startButton.disabled = !fileInput.files.length;
-    }
-
-
-    document.getElementById('startButton').addEventListener('click', function() {
-      // Show overlay with loading spinner
-      document.getElementById('overlay').style.display = 'flex';
+      <p style="text-align: center"> Copyright &copy; <script>
+          document.write(new Date().getFullYear())
+        </script> All Rights Reserved</p>
   
-      // Set a timeout for 2 minutes (in milliseconds)
-      setTimeout(function() {
-        // Hide overlay after 2 minutes
-        document.getElementById('overlay').style.display = 'none';
-      }, 2 * 60 * 1000); // 2 minutes = 2 * 60 * 1000 milliseconds
-    });
-  </script>
-
-
-
-
-
-
-<!-- 
-    <script>
-        const dropArea = document.getElementById('drop-area');
-        const fileInput = document.getElementById('file-input');
-        const fileUploadForm = document.getElementById('file-upload-form');
-
-        dropArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropArea.classList.add('active');
-        });
-
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.classList.remove('active');
-        });
-
-        dropArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropArea.classList.remove('active');
-            const files = e.dataTransfer.files;
-            fileInput.files = files;
-            displayFileName(files[0].name);
-        });
-
-        fileInput.addEventListener('change', () => {
-            const files = fileInput.files;
-            if (files.length > 0) {
-                displayFileName(files[0].name);
-            }
-        });
-
-        function displayFileName(fileName) {
-            const p = dropArea.querySelector('p');
-            p.textContent = fileName;
-        }
-
-        fileUploadForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Handle form submission here, e.g., submit the file via AJAX or a backend script.
-        });
-    </script>
- -->
- 
-
-
-
-
+    </div>
+  
+  
+    <!-- Footer ends -->
   
 
     
-</body>
+  </body>
 </html>

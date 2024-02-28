@@ -1,297 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accident Detection | Result</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-
-  <!-- CSS file -->
-
-  <!-- FontAwesome link -->
-  <script src="https://kit.fontawesome.com/7f5971d884.js" crossorigin="anonymous"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .name {
-      margin: 10px;
-    }
-
-    .navbar-main {
-      background-color: #0094ff;
-      box-shadow: 1px 1px 15px 1px black;
-      font-family: Verdana, Geneva, Tahoma, sans-serif sans-serif;
-    }
-
-    .nav-link {
-      margin-right: 50px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accident Detection | Result</title>
 
 
-    .drop-area {
-      width: 70%;
-      height: 200px;
-      border: 2px dashed #ccc;
-      text-align: center;
-      padding: 10px;
-      cursor: pointer;
-    }
+     <!-- Bootstrap -->
+     <link
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+     rel="stylesheet"
+     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+     crossorigin="anonymous"
+   />
+   <script
+     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+     crossorigin="anonymous"
+   ></script>
 
-    #file-upload-form {
-      margin-top: 50px;
-      text-align: center;
-    }
+   <!-- CSS file -->
+   <link rel="stylesheet" href="/styles.css" />
 
-    .upload-btn {
-      background-color: #DF2E38;
-      margin: 10px;
-      margin-bottom: 50px;
-      height: 60px;
-      width: 150px;
-      border-radius: 30px;
-      font-weight: 600;
-      color: #fff;
-      font-family: sans-serif;
-      border: none;
-      box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    }
-
-
-    .working-cards-main-container {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .card-div {
-      margin-bottom: 30px;
-      margin-top: 30px;
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    }
-
-    .Indusrtries-main-container {
-      margin: 5%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .Industries-inner-container {
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      padding: 5px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .insurance-img {
-      width: 200px;
-      height: auto;
-      margin-right: 5px;
-    }
-
-
-    /************************************************ Footer ***************************************************/
-
-
-
-    .footer-bottom {
-      margin: 0;
-      color: #fff;
-    }
-
-    .footer {
-      margin: 0;
-      background-color: #181D31;
-      color: #fff;
-      padding-bottom: 1%;
-    }
-
-    .social-media-icons {
-      text-align: center;
-    }
-
-    .fa {
-      padding: 10px;
-      font-size: 20px;
-      text-align: center;
-      text-decoration: none;
-      margin: 2% 0.3%;
-      border-radius: 100%;
-    }
-
-    .fa:hover {
-      opacity: 0.7;
-      color: #fff;
-    }
-
-    .fa-facebook {
-      background: #3B5998;
-      color: white;
-    }
-
-    .fa-twitter {
-      background: #55ACEE;
-      color: white;
-    }
-
-    .fa-linkedin {
-      background: #007bb5;
-      color: white;
-    }
-
-    .fa-youtube {
-      background: #bb0000;
-      color: white;
-    }
-
-    .fa-instagram {
-      background: #125688;
-      color: white;
-    }
-
-    .result-images-container {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .result-image {
-      padding: 0;
-      height: 250px;
-      width: 18rem;
-      border: 3px solid;
-      margin: 10px;
-      margin-bottom: 10px;
-    }
-
-    .result-image:hover {
-      opacity:
-        0.8;
-    }
-
-    /* CSS for popup (image) */
-
-    #popup-container {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: black;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #popup-content {
-      max-width: 80%;
-      max-height: 80%;
-      overflow: hidden;
-    }
-
-    #popup-content img {
-      width: 100%;
-      height: 100%;
-      border-radius: 8px;
-    }
-
-    #close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      color: #fff;
-      font-size: 24px;
-    }
-  </style>
+   <!-- FontAwesome link -->
+   <script
+     src="https://kit.fontawesome.com/7f5971d884.js"
+     crossorigin="anonymous"
+   ></script>
 </head>
-
 <body>
+     <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg bg-body-primary navbar-main sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img
+                  src="/assets/logo.png"
+                  alt="Logo"
+                  width="80"
+                  height="60"
+                  class="d-inline-block align-text-top"
+                />
+              </a>
+              <a  href="/"> <h3 class="name">ACCIDETECT</h3></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <h6>
+                  <a class="nav-link " aria-current="page" href="/">Home</a>
+                </h6>
+              </li>
+              <li class="nav-item ">
+                <h6><a class="nav-link active" href="/about.html">About</a></h6>
+              </li>
+              <li class="nav-item">
+                <h6><a class="nav-link" href="/team.html">Team</a></h6>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <!-- Navbar End -->
 
-  <!-- Navbar start -->
+    
+      <h3 class="about-accidetect-heading">Result</h3>
+
+    <div class="row image-gallery-container-main ">
+        <div class="col-lg-3 image-container-body">
+            <div class="image-container">
+                <img class="result-image" src="https://tse1.mm.bing.net/th?id=OIP.S20rPmYnm7JdVUg1wj8JwQHaE7&pid=Api&rs=1&c=1&qlt=95&w=163&h=108" alt="Image 1">
+            </div>
+         
+                <h4 class="time" onclick="copyTimestamp(this)">Time : 1.50<span class="copy-icon"><i class="far fa-copy"></i></span></h4>
+        </div>
+
+        <div class="col-lg-3 image-container-body">
+            <div class="image-container">
+                <img class="result-image" src="https://tse1.mm.bing.net/th?id=OIP.8Cb5Dp8CFJ6ZU6bTkCt7SAHaE8&pid=Api&rs=1&c=1&qlt=95&w=156&h=104" alt="Image 2">
+            </div>
+            <h4 class="time" onclick="copyTimestamp(this)">Time : 2.00<span class="copy-icon"><i class="far fa-copy"></i></span></h4>
+        </div>
+
+        <div class="col-lg-3 image-container-body">
+            <div class="image-container">
+                <img class="result-image" src="https://tse1.mm.bing.net/th?id=OIP.S20rPmYnm7JdVUg1wj8JwQHaE7&pid=Api&rs=1&c=1&qlt=95&w=163&h=108" alt="Image 3">
+            </div>
+            <h4 class="time" onclick="copyTimestamp(this)">Time : 1.20<span class="copy-icon"><i class="far fa-copy"></i></span></h4>
+        </div>
+
+        <div class="col-lg-3 image-container-body">
+            <div class="image-container">
+                <img class="result-image" src="https://tse1.mm.bing.net/th?id=OIP.YiudaKPfvFSXAdOOzst5wAHaEK&pid=Api&rs=1&c=1&qlt=95&w=172&h=96" alt="Image 4">
+            </div>
+            <h4 class="time" onclick="copyTimestamp(this)">Time : 1.75<span class="copy-icon"><i class="far fa-copy"></i></span></h4>
+        </div>
+
+        <div class="col-lg-3 image-container-body">
+            <div class="image-container">
+                <img class="result-image" src="https://tse1.mm.bing.net/th?id=OIP.vBq1nkyyELgIKjk2lGLVeAHaE7&pid=Api&rs=1&c=1&qlt=95&w=145&h=96" alt="Image 5">
+            </div>
+            <h4 class="time" onclick="copyTimestamp(this)">Time : 1.90<span class="copy-icon"><i class="far fa-copy"></i></span></h4>
+        </div>
+
+        <!-- Add more similar image blocks as needed -->
+    </div>
 
 
-  <nav class="navbar navbar-expand-lg bg-body-primary  navbar-main">
-    <div class="container-fluid">
-      <h3 class="name">ACCIDETECT</h3>
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <h6> <a class="nav-link active" aria-current="page" href="/">Home</a></h6>
-          </li>
-          <li class="nav-item">
-            <h6><a class="nav-link" href="#">About</a></h6>
-          </li>
-        </ul>
+
+
+       <!-- Footer starts -->
+
+       <div class="footer">
+
+        <p style="text-align: center"> Copyright &copy; <script>
+            document.write(new Date().getFullYear())
+          </script> All Rights Reserved</p>
+    
       </div>
-    </div>
-  </nav>
-
-
-  <!-- Navbar end -->
-  <div class="row result-images-container" style="margin: 4%;">
-
-    {% for image_name,timestamp in result.items() %}
-    <img id="myImage{{index}}" onclick="openPopup()" class="result-image"
-      src="{{ url_for('static', filename='results/' + image_name) }}" alt="">
-
-    <!-- Popup Container -->
-    <div id="popup-container" onclick="closePopup()">
-      <div id="popup-content">
-        <span id="close-btn">&times;</span>
-        <img src="{{ url_for('static', filename='results/' + image_name) }}" alt="">
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+    
+    
+      <!-- Footer ends -->
 
 
 
-  <!-- Footer starts -->
-
-  <div class="footer">
-    <div class="social-media-icons">
-      <a href="#" class="fa fa-twitter"></a>
-      <a href="#" class="fa fa-youtube"></a>
-      <a href="#" class="fa fa-instagram"></a>
-      <a href="#" class="fa fa-linkedin"></a>
-      <a href="#" class="fa fa-facebook"></a>
-    </div>
-
-    <p style="text-align: center"> Copyright &copy;
       <script>
-        document.write(new Date().getFullYear())
-      </script> All Rights Reserved
-    </p>
+        function copyTimestamp(element) {
+            var timestampText = element.textContent.trim().replace('Time : ', ''); // Extract timestamp text
+            var tempInput = document.createElement('input');
+            tempInput.value = timestampText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
 
-  </div>
+            // Change icon to check mark
+            var icon = element.querySelector('i');
+            icon.className = 'far fa-check-circle';
 
+            // Disable further clicks
+            element.onclick = null;
+        }
+    </script>
 
-  <!-- Footer ends -->
+    
+  
+  <!-- Add Font Awesome CDN for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha384-1mjvce4/Z9sbkp4zMfpndaG7bdqhouwj9HfX4Y9vRCMzpz+2+uBsD1xSXab+EeeV" crossorigin="anonymous"></script>
 
-  <script>
-    function openPopup() {
-      document.getElementById('popup-container').style.display = 'flex';
-    }
-
-    function closePopup() {
-      document.getElementById('popup-container').style.display = 'none';
-    }
-  </script>
+    
 
 </body>
-
 </html>
